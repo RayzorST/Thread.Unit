@@ -44,15 +44,21 @@ namespace Unit.Types
             int i = Convert.ToInt32(n);
             while (true)
             {
-                try
+                CaseStatus status = Cases[i].GetStatus();
+                if (status == CaseStatus.Break) break;
+                else if (status == CaseStatus.Run)
                 {
-                    Cases[i].Execute();
+                    try
+                    {
+                        Cases[i].Execute();
+                    }
+                    catch (Exception e)
+                    {
+                        Cases[i].SetException(e);
+                        Cases[i].SetStatus(CaseStatus.Error);
+                    }
                 }
-                catch (Exception e)
-                {
-                    Cases[i].SetException(e);
-                    Cases[i].SetStatus(CaseStatus.Error);
-                }
+                else if (Cases[i].IsImportant() == true) Cases[i].SetStatus(CaseStatus.Run);
             }
         }
 
@@ -70,10 +76,9 @@ namespace Unit.Types
             {
                 result += Name;
                 for (int i = 0; i < Cases.Count; i++)
-                    result += (i == Cases.Count - 1 ? "└" : "├") + "─── " + Cases[i].Name + ":  " + Cases[i].GetStatus();
+                    result += (i == Cases.Count - 1 ? "\n└" : "\n├") + "─── " + Cases[i].Name + ":  " + Cases[i].GetStatus();
             }
-            else
-                result += Name + ":  " + Cases[0].GetStatus();
+            else result += Name + ":  " + Cases[0].GetStatus();
 
             return result;
         }

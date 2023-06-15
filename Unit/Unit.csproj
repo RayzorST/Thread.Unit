@@ -4,6 +4,13 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Unit</Title>
+    <Version>$(VersionPrefix)</Version>
+    <Description>Unit is a tool for creating multithreaded software for .NET</Description>
+    <PackageTags>Thread, Action</PackageTags>
+    <FileVersion>0.0.0.1</FileVersion>
+    <PackageId>Thread.Unit</PackageId>
   </PropertyGroup>
 
 </Project>

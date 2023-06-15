@@ -3,7 +3,7 @@
 namespace Unit.Types
 {
     /// <summary>
-    /// List of operations
+    /// Information about operation
     /// </summary>
     public class Case
     {
@@ -28,14 +28,12 @@ namespace Unit.Types
 
         public void SetStatus(CaseStatus status)
         {
-            if (!important)
-                this.status = status;
+            if (!important) this.status = status;
         }
 
         public void Execute()
         {
-            if (status == 0) action();
-            else if (status != 0 && important) status = 0;
+            action();
         }
 
         public CaseStatus GetStatus()
@@ -51,6 +49,11 @@ namespace Unit.Types
         public void SetException(Exception ex)
         {
             exception = ex;
+        }
+
+        public bool IsImportant()
+        {
+            return important;
         }
     }
 }
