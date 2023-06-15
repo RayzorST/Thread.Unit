@@ -5,5 +5,7 @@
 ```
 > dotnet add package Thread.Unit --version 1.0.0
 ```
-### NuGet
-** https://www.nuget.org/packages/Thread.Unit **
+### Package Manager
+```
+PM> NuGet\Install-Package Thread.Unit -Version 1.0.0
+```
