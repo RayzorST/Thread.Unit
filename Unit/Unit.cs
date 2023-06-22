@@ -1,6 +1,7 @@
 ﻿using Unit.Enums;
+using Unit.Types;
 
-namespace Unit.Types
+namespace Unit
 {
     public class Unit
     {
@@ -64,8 +65,8 @@ namespace Unit.Types
 
         private bool AlreadyName(string name)
         {
-            foreach(var Case in Cases)
-                if(Case.Name == name) return true;
+            foreach (var Case in Cases)
+                if (Case.Name == name) return true;
             return false;
         }
 

@@ -9,6 +9,9 @@ namespace Unit.Types
     {
         public string Name;
         private readonly Action action;
+        /// <summary>
+        /// If true, the object will continue to work in any situation except break
+        /// </summary>
         private readonly bool important = false;
         private CaseStatus status = CaseStatus.Run;
         private Exception? exception = null;
