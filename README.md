@@ -57,9 +57,9 @@ internal class B : Unit.Unit
 # Installation
 ### .NET CLI
 ```
-> dotnet add package Thread.Unit --version 1.0.0
+> dotnet add package Thread.Unit --version 1.0.1
 ```
 ### Package Manager
 ```
-PM> NuGet\Install-Package Thread.Unit -Version 1.0.0
+PM> NuGet\Install-Package Thread.Unit -Version 1.0.1
 ```
