@@ -5,12 +5,12 @@ Unit will help you manage threads on .NET
 ```
 internal class Program
 {
-    static List<Unit.Types.Unit> Units = new();
+    static List<Unit.Unit> Units = new();
     static void Main()
     {
         Units.Add(new A());
         Units.Add(new B());
-        Units.Add(new Unit.Types.Unit(C, "C", true));
+        Units.Add(new Unit.Unit(C, "C", true));
     }
 
     static void C()
@@ -22,7 +22,7 @@ internal class Program
 ```
 ### Class A
 ```
-internal class A : Unit.Types.Unit
+internal class A : Unit.Unit
 {
     public A() : base(methodA, "A", false)
     { }
@@ -36,7 +36,7 @@ internal class A : Unit.Types.Unit
 ```
 ### Class B
 ```
-internal class B : Unit.Types.Unit
+internal class B : Unit.Unit
 {
     public B() : base(new List<Action> { methodB1, methodB2 }, "B", new List<string> { "methodB1", "methodB2" }, false)
     { }
